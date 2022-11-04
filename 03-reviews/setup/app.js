@@ -79,5 +79,22 @@ function showPerson(person) {
 
 nextBtn.addEventListener("click", function () {
   currentItem++;
+  //to avoid an error
+  if (currentItem > reviews.length - 1) {
+    currentItem = 0;
+    // Start from the very beginning
+  }
+  showPerson(currentItem);
+});
+
+//Show previous person
+
+prevBtn.addEventListener("click", function () {
+  currentItem--;
+  //to avoid an error
+  if (currentItem < 0) {
+    currentItem = reviews.length - 1;
+    // Start from the very beginning
+  }
   showPerson(currentItem);
 });
