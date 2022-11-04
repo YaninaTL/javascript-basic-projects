@@ -42,3 +42,22 @@ const nextBtn = document.querySelector(".next-btn");
 const randomBtn = document.querySelector(".random-btn");
 
 // Working with the array
+// From 0 to 3 as there are 4 items
+let currentItem = 0;
+
+//Load initial item
+//Callback
+window.addEventListener("DOMContentLoaded", function () {
+  const item = reviews[currentItem];
+  img.src = item.img;
+  // or img.src = reviews[currentItem].img;
+
+  //We can see the first person as let currentItem = 0;
+
+  //Change all the info
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+});
+
+//Show person based on item
