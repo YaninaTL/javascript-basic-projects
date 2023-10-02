@@ -75,7 +75,9 @@ const menu = [
 const sectionCenter = document.querySelector(".section-center");
 
 window.addEventListener("DOMContentLoaded", function () {
-  let displayMenu = menu.map(function (item) {
+  displayMenuItems(menu);
+});
+/*  let displayMenu = menu.map(function (item) {
     return `        <article class="menu-item">
           <img src=${item.img} class="photo" alt=${item.title} />
           <div class="item-info">
@@ -89,5 +91,23 @@ window.addEventListener("DOMContentLoaded", function () {
   });
   displayMenu = displayMenu.join("");
   sectionCenter.innerHTML = displayMenu;
-});
+  */
 // in order not to duplicate too much times in html file
+//but a better way is to use the function
+
+function displayMenuItems(menuItems) {
+  let displayMenu = menuItems.map(function (item) {
+    return `        <article class="menu-item">
+          <img src=${item.img} class="photo" alt=${item.title} />
+          <div class="item-info">
+            <header></header>
+              <h4>${item.title}</h4>
+              <h4 class="price">$${item.price}</h4>
+            </header>
+            <p class="item-text">${item.desc}</p>
+          </div>
+        </article>`;
+  });
+  displayMenu = displayMenu.join("");
+  sectionCenter.innerHTML = displayMenu;
+}
