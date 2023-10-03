@@ -79,6 +79,17 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 //load items
 window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(menu);
+
+  //adding changes after copy to get unique
+  const categories = menu.reduce(
+    function (values, item) {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    },
+    ["all"]
+  );
 });
 //filter items
 
