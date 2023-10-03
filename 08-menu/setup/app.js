@@ -90,6 +90,10 @@ window.addEventListener("DOMContentLoaded", function () {
     },
     ["all"]
   );
+  //adding btns after changes
+  const categoryBtns = categories.map(function (category) {
+    return `<button class="filter-btn" type="button" data-id = ${category}>${category}</button> `;
+  });
 });
 //filter items
 
