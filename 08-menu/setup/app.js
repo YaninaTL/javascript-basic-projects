@@ -91,6 +91,12 @@ filterBtns.forEach(function (btn) {
       }
     });
     //console.log(e.currentTarget.dataset) - can use because of data in html
+    if (category === "all") {
+      displayMenuItems(menu);
+    } else {
+      displayMenuItems(menuCategory);
+    }
+    //a filter works on the btns
   });
 });
 /*  let displayMenu = menu.map(function (item) {
