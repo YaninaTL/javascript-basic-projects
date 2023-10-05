@@ -29,7 +29,8 @@ navToggle.addEventListener("click", function () {
     linksContainer.style.height = 0;
   }
 });
-//height = 150 as we have 3 links, so, if we change the quantity it'll be autocalculated
+// height AUTO to links-container in css!
+//height = 150 as we have 3 links, so, if we change the quantity the height will be autocalculated
 
 // ********** fixed navbar ************
 
