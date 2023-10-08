@@ -55,4 +55,34 @@ window.addEventListener("scroll", function () {
   }
 });
 // ********** smooth scroll ************
-// select links
+// CSS html -> smooth
+const scrollLinks = document.querySelectorAll(".scroll-link");
+scrollLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    // prevent default
+    e.preventDefault();
+    // navigate to a specific spot
+    const id = e.currentTarget.getAttribute("href").slice(1);
+    // to get id without #
+    const element = document.getElementById(id);
+    // starting to calculate the height
+    const navHeight = navbar.getBoundingClientRect().height;
+    const containerHeight = linksContainer.getBoundingClientRect().height;
+
+    const fixedNav = navbar.classList.contains("fixed-nav");
+
+    let position = element.offsetTop - navHeight;
+
+    if (!fixedNav) {
+      position = position - navHeight;
+    }
+    if (navHeight > 82) {
+      position = position + containerHeight;
+    }
+    // 82 - the size of navbar
+
+    window.scrollTo({ left: 0, top: position });
+    // working with a small window
+    linksContainer.style.height = 0;
+  });
+});
