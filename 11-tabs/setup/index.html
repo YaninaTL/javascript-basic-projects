@@ -9,7 +9,64 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>tabs project</h1>
+    <section>
+      <div class="title">
+        <h2>about</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis nam
+          natus non, optio id omnis reprehenderit! Ex dignissimos qui deserunt?
+        </p>
+      </div>
+      <div class="about-center section-center">
+        <article class="about-img">
+          <img src="./hero-bcg.jpeg" alt="about pic" />
+        </article>
+        <article class="about">
+          <!-- btn container -->
+          <article class="about-content">
+            <!-- single item -->
+            <div class="content active" id="history">
+              <h4>history</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Debitis eaque tempora odio alias dolorum deserunt quasi
+                consequatur necessitatibus cumque veritatis!
+              </p>
+            </div>
+
+            <div class="content" id="vision">
+              <h4>vision</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Assumenda dolores dolor quibusdam, quia dignissimos aut natus.
+                Obcaecati placeat vitae tempora iste ullam reiciendis maxime
+                quaerat, unde est, dolor alias delectus nobis illo.
+              </p>
+              <ul>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+              </ul>
+            </div>
+
+            <div class="content" id="goals">
+              <h4>goals</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+                velit neque vel facilis corporis. Consectetur beatae
+                reprehenderit autem odio quam voluptatibus quaerat, nihil quis?
+              </p>
+            </div>
+          </article>
+          <div class="btn-container">
+            <button class="tab-btn active" data-id="history">history</button>
+            <button class="tab-btn" data-id="vision">vision</button>
+            <button class="tab-btn" data-id="goals">goals</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- javascript -->
     <script src="app.js"></script>
   </body>
