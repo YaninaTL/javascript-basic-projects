@@ -37,11 +37,19 @@ const hours = futureDate.getHours();
 
 const minutes = futureDate.getMinutes();
 
-giveaway.textContent = `Giveaway ends on ${year} ${String(hours).padStart(
-  2,
-  "0"
-)}:${String(minutes).padStart(2, "0")}`;
+/*giveaway.textContent = `Giveaway ends on ${month} ${year} ${String(
+  hours
+).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
 //solution for 08:00; without methods is 8:0
+*/
 
 // month and day through arrays
 let month = futureDate.getMonth();
+month = months[month];
+
+const date = futureDate.getDate();
+
+const weekday = weekdays[futureDate.getDay()];
+// shorter way than month
+
+giveaway.textContent = `Giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes} am`;
