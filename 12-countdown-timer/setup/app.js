@@ -1,4 +1,4 @@
-const months = [
+hconst months = [
   "January",
   "February",
   "March",
@@ -52,7 +52,7 @@ const date = futureDate.getDate();
 const weekday = weekdays[futureDate.getDay()];
 // shorter way than month
 
-giveaway.textContent = `Giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}`;
+giveaway.textContent = `Giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`;
 //future time in ms
 const futureTime = futureDate.getTime();
 
@@ -83,8 +83,26 @@ function getRemainingTime() {
   // set values array
   const values = [days, hours, minutes, seconds];
 
+  // adding 0
+  function format(item) {
+    if (item < 10) {
+      return (item = `0${item}`);
+    }
+    return item;
+  }
+ // set interval
   item.forEach(function (item, index) {
     item.innerHTML = values[index];
   });
+ 
+  if (t < 0) {
+    clearInterval(countdown);
+    deadLine.innerHTML = `<h4 class='expired>sorry, this giveaway has expired</h4>`;
+  }
 }
+// auto countdown
+let countdown = setInterval(getRemainingTime, 1000);
+
 getRemainingTime();
+
+// don't work after adding 0 and intervals
